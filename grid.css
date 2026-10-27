@@ -1,0 +1,44 @@
+/* Demonstrações de CSS Grid */
+.grid-demo {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+}
+.grid-demo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #00d8ff;
+  color: #17202a;
+  font-weight: bold;
+  text-align: center;
+}
+.grid-columns { grid-template-columns: repeat(3, 1fr); }
+.grid-rows { grid-template-columns: 1fr 2fr; grid-template-rows: 80px 120px; }
+.grid-span { grid-template-columns: repeat(3, 1fr); }
+.grid-span .wide { grid-column: 1 / 3; }
+.grid-responsive { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  background: rgba(0,0,0,0.25);
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+main ul { padding-left: 24px; margin: 12px 0; }
+main li { list-style: disc; margin: 8px 0; line-height: 1.5; }
+main a { color: #00d8ff; font-weight: bold; }
+footer { text-align: center; padding: 24px; opacity: .7; }
+@media (max-width: 600px) {
+  .grid-demo { padding: 12px; gap: 8px; }
+  .grid-rows { grid-template-rows: auto auto; }
+  .grid-responsive { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+}
