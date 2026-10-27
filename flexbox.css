@@ -1,0 +1,44 @@
+/* Demonstrações de Flexbox */
+.demo {
+  display: flex;
+  gap: 12px;
+  min-height: 145px;
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  align-items: center;
+}
+.demo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  min-height: 65px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #00d8ff;
+  color: #17202a;
+  font-weight: bold;
+}
+.flex-row { flex-direction: row; justify-content: flex-start; }
+.flex-space { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; align-content: center; }
+.flex-wrap > div { flex: 1 1 130px; }
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  background: rgba(0,0,0,0.25);
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+main ul { padding-left: 24px; margin: 12px 0; }
+main li { list-style: disc; margin: 8px 0; line-height: 1.5; }
+main a { color: #00d8ff; font-weight: bold; }
+footer { text-align: center; padding: 24px; opacity: .7; }
+@media (max-width: 600px) {
+  .demo { padding: 12px; gap: 8px; }
+  .demo > div { min-width: 52px; }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Aula de CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+  <header>
+    <h1>Flexbox - Layout em uma dimensão</h1>
+    <a href="index.html">⬅ Voltar ao Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>O que é Flexbox?</h2>
+      <p>Flexbox é um modelo de layout CSS que organiza elementos em uma dimensão: em uma linha ou em uma coluna. Ele facilita o alinhamento, a distribuição de espaço e a adaptação dos itens ao tamanho disponível.</p>
+      <p>Para ativá-lo, coloque <code>display: flex;</code> no elemento pai. Esse elemento vira o <strong>container flex</strong>, e seus filhos diretos viram <strong>itens flex</strong>.</p>
+      <pre><code>.container {
+  display: flex;
+}</code></pre>
+    </section>
+    <section>
+      <h2>1. Eixo principal e eixo transversal</h2>
+      <p><code>flex-direction</code> define o eixo principal. Com <code>row</code>, os itens ficam em linha; com <code>column</code>, ficam em coluna.</p>
+      <div class="demo flex-row"><div>1</div><div>2</div><div>3</div></div>
+      <pre><code>.container {
+  display: flex;
+  flex-direction: row; /* linha */
+  /* flex-direction: column; para coluna */
+}</code></pre>
+    </section>
+    <section>
+      <h2>2. Alinhamento e espaçamento</h2>
+      <ul>
+        <li><code>justify-content</code>: distribui os itens no eixo principal.</li>
+        <li><code>align-items</code>: alinha os itens no eixo transversal.</li>
+        <li><code>gap</code>: cria espaço entre os itens.</li>
+      </ul>
+      <div class="demo flex-space"><div>HTML</div><div>CSS</div><div>JS</div></div>
+      <pre><code>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}</code></pre>
+      <p>Valores comuns de <code>justify-content</code>: <code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code> e <code>space-evenly</code>.</p>
+    </section>
+    <section>
+      <h2>3. Quebra de linha e tamanho dos itens</h2>
+      <p><code>flex-wrap: wrap;</code> permite que os itens passem para outra linha quando não há espaço. A propriedade <code>flex</code> controla como um item cresce ou encolhe.</p>
+      <div class="demo flex-wrap"><div>Cartão 1</div><div>Cartão 2</div><div>Cartão 3</div><div>Cartão 4</div><div>Cartão 5</div></div>
+      <pre><code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.item {
+  flex: 1 1 130px;
+}</code></pre>
+      <p>Em <code>flex: 1 1 130px</code>, os itens podem crescer, podem encolher e começam com uma base de 130px.</p>
+    </section>
+    <section>
+      <h2>4. Quando usar Flexbox?</h2>
+      <ul>
+        <li>Menus de navegação;</li>
+        <li>Alinhar ícone e texto;</li>
+        <li>Centralizar conteúdo;</li>
+        <li>Distribuir botões ou cartões em uma linha flexível.</li>
+      </ul>
+      <pre><code>.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}</code></pre>
+    </section>
+    <section>
+      <h2>Atividade prática</h2>
+      <p>Crie um menu com três links. Use <code>display: flex</code>, experimente <code>justify-content</code> e depois habilite <code>flex-wrap</code> para observar o comportamento em telas menores.</p>
+      <p><a href="https://flexboxfroggy.com/" target="_blank" rel="noopener noreferrer">Pratique com Flexbox Froggy 🐸</a></p>
+    </section>
+  </main>
+  <footer>Hub de Aulas HTML & CSS</footer>
+</body>
+</html>
